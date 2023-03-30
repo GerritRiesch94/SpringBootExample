@@ -1,10 +1,11 @@
-package com.example.example.api;
+package com.example.sprinbootexamplemaven.api;
 
-import com.example.example.service.AppService;
+import com.example.sprinbootexamplemaven.service.AppService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/api/data")
 public class AppController {
