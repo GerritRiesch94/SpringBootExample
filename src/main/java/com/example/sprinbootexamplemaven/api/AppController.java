@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/data")
-public class AppController {
+public class AppController implements AppControllerApi {
 
     private final AppService appService;
 
@@ -16,7 +15,6 @@ public class AppController {
         this.appService = appService;
     }
 
-    @GetMapping("/{id}")
     public ResponseEntity<List<String>> getData(@PathVariable String id, @RequestParam Integer skip, @RequestParam Integer top) {
         // should represent a database service, api call, etc.
         var data = this.appService.searchForIdAndPaginate(id, skip, top);
